@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>att-ger.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Sphere</object-name>
+  <object-name>case</object-name>
+  <object-name>markings</object-name>
+  <emission>
+    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    <red>0.5</red>
+    <green>0.25</green>
+    <blue>0.25</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Sphere</object-name>
+  <property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
+  <center>
+     <x-m>0.00</x-m>
+     <y-m>-0.005</y-m>
+     <z-m>-0.0</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>Sphere</object-name>
+  <property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
+  <center>
+     <x-m>-0.049</x-m>
+     <y-m>0.0</y-m>
+     <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
