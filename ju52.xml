@@ -150,8 +150,8 @@ flap drag not available
 <gear x="-17.672" y="0" z="-0.629" compression="0.2" castering="1"
   dfric="0.1" sfric ="0.20">
   <control-input axis="/controls/gear/tailwheel-lock" control="CASTERING" 
-                 src0="-1.0" src1="1.0"
-                 dst0="0.5" dst1="-0.5"/>
+                 src0="0" src1="1"
+                 dst0="1" dst1="0"/>
 </gear>
 
  <!-- left main -->

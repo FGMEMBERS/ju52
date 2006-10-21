@@ -128,7 +128,7 @@ Don't forget to release Tailwheel lock (Ctrl-l) before taxiing off the Runway.</
    </engine>
   </engines>
   <gear>
-     <tailwheel-lock>false</tailwheel-lock>
+     <tailwheel-lock>true</tailwheel-lock>
      <rdoor-pos-norm type="float">0.0</rdoor-pos-norm>
      <ldoor-pos-norm type="float">0.0</ldoor-pos-norm>
   </gear>
