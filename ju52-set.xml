@@ -84,6 +84,12 @@ faber@sol2500.net
         </config>
       </view>
 
+  <view n="6"> 
+        <config> 
+          <target-z-offset-m archive="y" type="double">8.75</target-z-offset-m>
+        </config>
+      </view>
+
   <chase-distance-m type="double" archive="y">-45.0</chase-distance-m>
 
   <help>
