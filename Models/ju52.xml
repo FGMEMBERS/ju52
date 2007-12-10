@@ -208,6 +208,7 @@
 
  <animation>
   <type>select</type>
+		<nopreview/>
   <object-name>noshadow.leftpdisk</object-name>
   <object-name>leftpropturn</object-name>
   <condition>
@@ -258,6 +259,7 @@
 
  <animation>
   <type>select</type>
+		<nopreview/>
   <object-name>noshadow.midpdisk</object-name>
   <object-name>midpropturn</object-name>
   <condition>
@@ -281,6 +283,7 @@
 
  <animation>
   <type>select</type>
+		<nopreview/>
   <object-name>noshadow.rightpdisk</object-name>
   <object-name>rightpropturn</object-name>
   <condition>
