@@ -14,7 +14,7 @@ faber@sol2500.net
 
   <description>Junkers Ju-52-3m</description>
   <author>Detlef Faber</author>
-
+  <status>beta</status>
   <flight-model>yasim</flight-model>
   <aero>ju52</aero>
   <fuel-fraction>1.0</fuel-fraction>
