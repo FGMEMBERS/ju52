@@ -16,7 +16,7 @@ faber@sol2500.net
   <author>Detlef Faber</author>
   <status>beta</status>
   <flight-model>yasim</flight-model>
-  <aero>ju52-yasim</aero>
+  <aero>ju52floats-yasim</aero>
   <fuel-fraction>1.0</fuel-fraction>
 
   <sound>
@@ -31,11 +31,12 @@ faber@sol2500.net
 
 
   <model>
-   <path>Aircraft/ju52/Models/Ju-52.xml</path>
+   <path>Aircraft/ju52/Models/Ju-52-Floats.xml</path>
    <livery>
-     <file type="string">Swiss</file>
-			<texture type="string">ju52-1.png</texture>
-			<texture-cowl type="string">ju52-1.png</texture-cowl>
+     <file type="string">Luftwaffe green</file>
+			<texture type="string">Liveries/ju52-1a.png</texture>
+			<texture-cowl type="string">Liveries/ju52-1a.png</texture-cowl>
+						<texture-floats>Liveries/floats_a.png</texture-floats>
   </livery>
   </model> 
 
@@ -156,16 +157,15 @@ Don't forget to release Tailwheel lock (Ctrl-l) before taxiing off the Runway.</
 					<name>5000 lbs Load</name>
       		<lbs>5000.0</lbs>
       </opt>
-      <opt>
-					<name>7500 lbs Load</name>
-      		<lbs>7500.0</lbs>
-      </opt>
-      <opt>
-					<name>10000 lbs Load</name>
-      		<lbs>10000.0</lbs>
-      </opt>
   </weight>
-
+<!--
+  <weight n="1">
+      <weight-lb>400</weight-lb>
+  </weight>
+  <weight n="2">
+      <weight-lb>400</weight-lb>
+  </weight>
+-->
  </sim>
 
  <controls>

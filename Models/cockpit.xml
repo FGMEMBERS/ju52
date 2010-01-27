@@ -1,0 +1,224 @@
+<PropertyList>
+
+ <!--Pilots panel -->
+
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/asi350-ger.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.44</y-m>
+   <z-m>0.54</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/alt-ger.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.35</y-m>
+   <z-m>0.63</z-m>
+  </offsets>
+ </model>
+
+  <model>
+  <path>Aircraft/ju52/Models/Instruments/vario15-ger.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.35</y-m>
+   <z-m>0.54</z-m>
+  </offsets>
+ </model>
+
+
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/att-ger.xml</path>
+  <offsets>
+   <x-m>2.283</x-m>
+   <y-m>-0.35</y-m>
+   <z-m>0.46</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/remote-ger.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.26</y-m>
+   <z-m>0.64</z-m>
+  </offsets>
+ </model>
+
+
+  <model>
+  <path>Aircraft/ju52/Models/Instruments/afn2.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.25</y-m>
+   <z-m>0.542</z-m>
+  </offsets>
+ </model>
+
+
+
+
+<!-- middle panel -->
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/tach-ger-1.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.08</y-m>
+   <z-m>0.65</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/man-ger-1.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.08</y-m>
+   <z-m>0.56</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/tach-ger-2.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.65</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/man-ger-2.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.56</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/tach-ger-3.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>0.08</y-m>
+   <z-m>0.65</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/man-ger-3.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>0.08</y-m>
+   <z-m>0.56</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/oiltemp-1.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.165</y-m>
+   <z-m>0.48</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/oiltemp-2.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.099</y-m>
+   <z-m>0.48</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/oiltemp-3.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.033</y-m>
+   <z-m>0.48</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/oiltempex-1.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.165</y-m>
+   <z-m>0.414</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/oiltempex-2.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.099</y-m>
+   <z-m>0.414</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/oiltempex-3.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.033</y-m>
+   <z-m>0.414</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/oilpress-1.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>0.033</y-m>
+   <z-m>0.48</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/oilpress-2.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>0.099</y-m>
+   <z-m>0.48</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/oilpress-3.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>0.165</y-m>
+   <z-m>0.48</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/fuelpress-1.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>0.033</y-m>
+   <z-m>0.414</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/fuelpress-2.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>0.099</y-m>
+   <z-m>0.414</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Instruments/fuelpress-3.xml</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>0.165</y-m>
+   <z-m>0.414</z-m>
+  </offsets>
+ </model>
+
+
+ <model>
+  <name>IGNITION</name>
+  <path>Aircraft/ju52/Models/Instruments/ignition-ger.ac</path>
+  <offsets>
+   <x-m>2.27</x-m>
+   <y-m>-0.10</y-m>
+   <z-m>0.068</z-m>
+  </offsets>
+ </model>
+
+ 
+</PropertyList>

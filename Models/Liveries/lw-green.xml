@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Luftwaffe green</name>
+
+            <texture>Liveries/ju52-1a.png</texture>
+            <texture-cowl>Liveries/ju52-1a.png</texture-cowl>
+						<texture-floats>Liveries/floats_a.png</texture-floats>
+        </livery>
+    </model>
+</sim>
+</PropertyList>

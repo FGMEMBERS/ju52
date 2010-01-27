@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>asi350-ger.ac</path>
+
+ <animation>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>needle</object-name>
+  <emission>
+    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+    <red>0.25</red>
+    <green>0.25</green>
+    <blue>0.8</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>54</ind>
+    <dep>47</dep>
+   </entry>
+   <entry>
+    <ind>108</ind>
+    <dep>151</dep>
+   </entry>
+   <entry>
+    <ind>162</ind>
+    <dep>282</dep>
+   </entry>
+   <entry>
+    <ind>184</ind>
+    <dep>348</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
+
+
