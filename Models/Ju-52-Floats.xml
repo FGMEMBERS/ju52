@@ -657,6 +657,25 @@
    </axis>
  </animation>
 
+ <model>
+  <path>Aircraft/ju52/Models/Effects/sprayL.xml</path>
+	<name>sprayL</name>
+  <offsets>
+   <x-m>0.0</x-m>
+   <y-m>-2.44</y-m>
+   <z-m>-3.5</z-m>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/ju52/Models/Effects/sprayR.xml</path>
+  <offsets>
+   <x-m>0.0</x-m>
+   <y-m>2.44</y-m>
+   <z-m>-3.5</z-m>
+  </offsets>
+ </model>
+
+
   <animation>
     <type>material</type>
     <object-name>fuselage</object-name>
