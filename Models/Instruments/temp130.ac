@@ -1,16 +1,16 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "case.003" rgb 0.275682 0.263133 0.275682 amb 0.857063 0.857063 0.857063 emis 0 0 0 spec 0.701169 0.688621 0.676072 shi 128 trans 0
-MATERIAL "ring.001" rgb 0.15 0.15 0.15 amb 1 1 1 emis 0 0 0 spec 0.6 0.6 0.6 shi 99 trans 0
-MATERIAL "case.004" rgb 0.275682 0.263133 0.275682 amb 0.857063 0.857063 0.857063 emis 0 0 0 spec 0.701169 0.688621 0.676072 shi 128 trans 0
-MATERIAL "ac3dmat1" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 0.5 0.5 0.5 shi 10 trans 0
-MATERIAL "case.002" rgb 0.1 0.1 0.1 amb 1 1 1 emis 0 0 0 spec 0.4 0.4 0.4 shi 78 trans 0
+MATERIAL "case" rgb 0.275682 0.263133 0.275682 amb 0.857063 0.857063 0.857063 emis 0 0 0 spec 0.701169 0.688621 0.676072 shi 128 trans 0
+MATERIAL "ring" rgb 0.15 0.15 0.15 amb 1 1 1 emis 0 0 0 spec 0.6 0.6 0.6 shi 99 trans 0
+MATERIAL "case.001" rgb 0.275682 0.263133 0.275682 amb 0.857063 0.857063 0.857063 emis 0 0 0 spec 0.701169 0.688621 0.676072 shi 128 trans 0
+MATERIAL "ac3dmat1.001" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 0.5 0.5 0.5 shi 10 trans 0
+MATERIAL "case.005" rgb 0.1 0.1 0.1 amb 1 1 1 emis 0 0 0 spec 0.4 0.4 0.4 shi 78 trans 0
 OBJECT world
 kids 6
 OBJECT poly
 name "Circle.001"
-data 10
-Circle.006
+data 6
+Circle
 texture "bezel.png"
 texrep 1 1
 crease 30.000000
@@ -2108,7 +2108,7 @@ kids 0
 OBJECT poly
 name "Circle.002"
 data 10
-Circle.007
+Circle.001
 texture "ring-metal.png"
 texrep 1 1
 crease 30.000000
@@ -3430,7 +3430,7 @@ kids 0
 OBJECT poly
 name "Circle.003"
 data 10
-Circle.008
+Circle.003
 texture "bezel.png"
 texrep 1 1
 crease 30.000000
@@ -5815,8 +5815,8 @@ refs 4
 kids 0
 OBJECT poly
 name "Face"
-data 4
-Mesh
+data 8
+Mesh.002
 texture "temp0130-ger.png"
 texrep 1 1
 crease 30.000000
@@ -5938,8 +5938,8 @@ refs 3
 kids 0
 OBJECT poly
 name "Needle1"
-data 8
-Mesh.001
+data 7
+Needle1
 crease 30.000000
 numvert 8
 0.00529 0.004098 0.016619
@@ -5985,7 +5985,7 @@ kids 0
 OBJECT poly
 name "ring"
 data 10
-Circle.002
+Circle.004
 texture "temp0130-ger.png"
 texrep 1 1
 crease 30.000000

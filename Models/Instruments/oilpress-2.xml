@@ -6,7 +6,7 @@
  <animation>
   <type>material</type>
   <object-name>Face</object-name>
-  <object-name>Needle1</object-name>
+  <object-name>needle</object-name>
   <emission>
     <factor-prop>/controls/lighting/instruments-norm</factor-prop>
     <red>0.25</red>
@@ -17,7 +17,7 @@
 
  <animation>
   <type>rotate</type>
-  <object-name>Needle1</object-name>
+  <object-name>needle</object-name>
   <property>/engines/engine[2]/oiltempc</property>
   <min>0.0</min>
   <max>150</max>

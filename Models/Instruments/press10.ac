@@ -5940,7 +5940,7 @@ OBJECT poly
 name "needle"
 data 12
 Cylinder.003
-texture "o2pressure.png"
+texture "bezel.png"
 texrep 1 1
 crease 30.000000
 numvert 44

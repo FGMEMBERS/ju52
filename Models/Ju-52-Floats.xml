@@ -297,36 +297,6 @@
   </axis>
  </animation>
 
-<animation>
-  <type>rotate</type>
-  <object-name>tailgear</object-name>
-  <property>gear/gear[2]/position-norm</property>
-  <interpolation>
-   <entry>
-    <ind>0.0</ind>
-    <dep>45</dep>
-   </entry>
-   <entry>
-    <ind>0.33</ind>
-    <dep>0</dep>
-   </entry>
-   <entry>
-    <ind>1.00</ind>
-    <dep>0.0</dep>
-   </entry>
-  </interpolation>
-  <center>
-   <x-m>10.76</x-m>
-   <y-m>0.0</y-m>
-   <z-m>-0.0</z-m>
-  </center>
-  <axis>
-   <x>0.0</x>
-   <y>1.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
-
  <animation>
   <type>rotate</type>
   <object-name>flap.R</object-name>
