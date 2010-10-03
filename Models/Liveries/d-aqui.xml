@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Lufthansa "D-AQUI"</name>
+
+            <texture>Liveries/ju52-daqui.png</texture>
+            <texture-cowl>Liveries/ju52-daqui.png</texture-cowl>
+	<texture-floats>Liveries/floats.png</texture-floats>
+        </livery>
+    </model>
+    <rendering>
+    <refl_correction type="string">-0.1</refl_correction>
+    </rendering>
+</sim>
+</PropertyList>

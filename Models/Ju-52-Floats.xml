@@ -6,6 +6,35 @@
 
  <path>ju52.ac</path>
 
+<!-- Effects-->
+<effect>
+	<inherits-from>Aircraft/ju52/Models/Effects/ju52_reflect</inherits-from> <!--FGFS 2.0 -->
+	<object-name>fuselage</object-name>
+	<object-name>cowling.L</object-name>
+	<object-name>cowlmid</object-name>
+	<object-name>cowling.R</object-name>
+	<object-name>vstab</object-name>
+	<object-name>rudder</object-name>
+	<object-name>hstab.L</object-name>
+	<object-name>hstab.R</object-name>
+	<object-name>wing.R</object-name>
+	<object-name>wing.L</object-name>
+	<object-name>flap.R</object-name>
+	<object-name>flap.L</object-name>
+	<object-name>aileron.R</object-name>
+	<object-name>aileron.L</object-name>
+	<object-name>elevator.R</object-name>
+	<object-name>elevator.L</object-name>
+	<object-name>rightdoor</object-name>
+	<object-name>leftdoor</object-name>
+	
+	<object-name>ladder</object-name>
+	<object-name>struts.L</object-name>
+	<object-name>struts.R</object-name>
+	<object-name>float.L</object-name>
+	<object-name>float.R</object-name>
+</effect>
+
 	<animation>
 		<type>shader</type>
 		<shader>chrome</shader>
@@ -17,6 +46,7 @@
 		<object-name>rightdoorglass</object-name>
 		<object-name>leftdoorglass</object-name>
 	</animation>
+
 
 	<model>
 		<name>floats</name>

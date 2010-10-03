@@ -44,7 +44,10 @@ faber@sol2500.net
 					<right-float type="bool">1</right-float>
 			</spray>
 	</aircraft>
-  </model> 
+</model> 
+<rendering>
+    <refl_correction type="string">-1</refl_correction>
+</rendering>
 
   <virtual-cockpit archive="y">false</virtual-cockpit>
   <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>

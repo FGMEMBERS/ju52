@@ -38,6 +38,9 @@ faber@sol2500.net
 			<texture-cowl type="string">ju52-1.png</texture-cowl>
   </livery>
   </model> 
+<rendering>
+<refl_correction type="string">-0.1</refl_correction>
+</rendering>
 
   <virtual-cockpit archive="y">false</virtual-cockpit>
   <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>

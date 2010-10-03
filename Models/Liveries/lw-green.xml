@@ -8,8 +8,11 @@
 
             <texture>Liveries/ju52-1a.png</texture>
             <texture-cowl>Liveries/ju52-1a.png</texture-cowl>
-						<texture-floats>Liveries/floats_a.png</texture-floats>
+	<texture-floats>Liveries/floats_a.png</texture-floats>
         </livery>
     </model>
+    <rendering>
+   <refl_correction type="string">-1</refl_correction>
+    </rendering>
 </sim>
 </PropertyList>

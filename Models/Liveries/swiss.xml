@@ -8,8 +8,11 @@
 
             <texture>ju52-1.png</texture>
             <texture-cowl>ju52-1.png</texture-cowl>
-						<texture-floats>floats.png</texture-floats>
+	<texture-floats>floats.png</texture-floats>
         </livery>
     </model>
+    <rendering>
+    <refl_correction type="string">-0.1</refl_correction>
+    </rendering>
 </sim>
 </PropertyList>
