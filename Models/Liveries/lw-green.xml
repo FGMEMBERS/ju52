@@ -12,7 +12,7 @@
         </livery>
     </model>
     <rendering>
-   <refl_correction type="string">-1</refl_correction>
+   <refl_correction type="string">-0.15</refl_correction>
     </rendering>
 </sim>
 </PropertyList>
