@@ -211,14 +211,69 @@
 
 
  <model>
-  <name>IGNITION</name>
-  <path>Aircraft/ju52/Models/Instruments/ignition-ger.ac</path>
+  <name>IGNITION0</name>
+  <path>Aircraft/ju52/Models/Instruments/ignition-ger/ignition-ger.xml</path>
   <offsets>
-   <x-m>2.27</x-m>
-   <y-m>-0.10</y-m>
-   <z-m>0.068</z-m>
+   <x-m>2.35</x-m>
+   <y-m>-0.14</y-m>
+   <z-m>0.3</z-m>
+	 <pitch-deg>-90</pitch-deg>
   </offsets>
  </model>
 
+ <model>
+  <name>IGNITION1</name>
+  <path>Aircraft/ju52/Models/Instruments/ignition-ger/ignition-ger1.xml</path>
+  <offsets>
+   <x-m>2.35</x-m>
+   <y-m>-0.09</y-m>
+   <z-m>0.3</z-m>
+	 <pitch-deg>-90</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <name>IGNITION2</name>
+  <path>Aircraft/ju52/Models/Instruments/ignition-ger/ignition-ger2.xml</path>
+  <offsets>
+   <x-m>2.35</x-m>
+   <y-m>-0.04</y-m>
+   <z-m>0.3</z-m>
+	 <pitch-deg>-90</pitch-deg>
+  </offsets>
+ </model>
+
+ <model>
+  <name>Starter</name>
+  <path>Aircraft/ju52/Models/Instruments/starter-ger/starter-ger.xml</path>
+  <offsets>
+   <x-m>2.35</x-m>
+   <y-m>0.04</y-m>
+   <z-m>0.3</z-m>
+	 <pitch-deg>-90</pitch-deg>
+	 <heading-deg>-90</heading-deg>
+  </offsets>
+ </model>
+ <model>
+  <name>Starter</name>
+  <path>Aircraft/ju52/Models/Instruments/starter-ger/starter-ger.xml</path>
+  <offsets>
+   <x-m>2.35</x-m>
+   <y-m>0.09</y-m>
+   <z-m>0.3</z-m>
+	 <pitch-deg>-90</pitch-deg>
+	 <heading-deg>-90</heading-deg>
+  </offsets>
+ </model>
+ <model>
+  <name>Starter</name>
+  <path>Aircraft/ju52/Models/Instruments/starter-ger/starter-ger.xml</path>
+  <offsets>
+   <x-m>2.35</x-m>
+   <y-m>0.13</y-m>
+   <z-m>0.3</z-m>
+	 <pitch-deg>-90</pitch-deg>
+	 <heading-deg>-90</heading-deg>
+  </offsets>
+ </model>
  
 </PropertyList>

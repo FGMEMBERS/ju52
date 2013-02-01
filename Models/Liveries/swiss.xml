@@ -3,6 +3,11 @@
 <PropertyList>
 <sim>
     <model>
+				<cowling>
+						<left type="int">1</left>
+						<mid type="int">1</mid>
+						<right type="int">1</right>
+				</cowling>
         <livery>
             <name type="string">Swiss</name>
 
@@ -10,6 +15,10 @@
             <texture-cowl>ju52-1.png</texture-cowl>
 	<texture-floats>floats.png</texture-floats>
         </livery>
+				<variant type="int">0</variant>
+				<reargun type="int">0</reargun>
+				<wheelcover type="int">0</wheelcover>
+				<enginecover type="int">0</enginecover>
     </model>
     <rendering>
     <refl_correction type="string">0.05</refl_correction>

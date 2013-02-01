@@ -32,6 +32,11 @@ faber@sol2500.net
 
   <model>
    <path>Aircraft/ju52/Models/Ju-52-Floats.xml</path>
+		<cowling>
+						<left type="int">1</left>
+						<mid type="int">1</mid>
+						<right type="int">1</right>
+		</cowling>
    <livery>
      <file type="string">Luftwaffe green</file>
 			<texture type="string">Liveries/ju52-1a.png</texture>
@@ -44,6 +49,10 @@ faber@sol2500.net
 					<right-float type="bool">1</right-float>
 			</spray>
 	</aircraft>
+				<variant type="int">0</variant>
+				<reargun type="int">0</reargun>
+				<wheelcover type="int">1</wheelcover>
+				<enginecover type="int">0</enginecover>
 </model> 
 <rendering>
     <refl_correction type="string">-1</refl_correction>

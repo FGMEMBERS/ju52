@@ -159,7 +159,7 @@ YASim aerodynamic model for a Ju-52 3/m
 
 
  <!-- left main -->
-<gear x="-4.564" y="2.149" z="-3.1" compression="0.3" spring="4.8" damp="3.3"
+<gear x="-4.564" y="2.149" z="-3.1" compression="0.5" spring="5.8" damp="9.3"
 	dfric="0.5" sfric="0.4">
   <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
@@ -167,7 +167,7 @@ YASim aerodynamic model for a Ju-52 3/m
 </gear>
 
  <!-- right main -->
-<gear x="-4.564" y="-2.149" z="-3.1" compression="0.3" spring="4.8" damp="3.3"
+<gear x="-4.564" y="-2.149" z="-3.1" compression="0.5" spring="5.8" damp="9.3"
 	dfric="0.5" sfric="0.4">
   <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
@@ -175,7 +175,7 @@ YASim aerodynamic model for a Ju-52 3/m
 </gear>
 
 <!-- Tail wheel -->
-<gear x="-17.672" y="0" z="-0.629" compression="0.1" castering="1"
+<gear x="-17.672" y="0" z="-0.629" compression="0.3" castering="1"
   dfric="0.1" sfric ="0.20">
   <control-input axis="/controls/gear/tailwheel-lock" control="CASTERING" 
                  src0="0" src1="1"

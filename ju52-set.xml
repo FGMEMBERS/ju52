@@ -32,11 +32,20 @@ faber@sol2500.net
 
   <model>
    <path>Aircraft/ju52/Models/Ju-52.xml</path>
+		<cowling>
+						<left type="int">1</left>
+						<mid type="int">1</mid>
+						<right type="int">1</right>
+		</cowling>
    <livery>
      <file type="string">Swiss</file>
 			<texture type="string">ju52-1.png</texture>
 			<texture-cowl type="string">ju52-1.png</texture-cowl>
   </livery>
+	<variant type="int">0</variant>
+	<reargun type="int">0</reargun>
+	<wheelcover type="int">1</wheelcover>
+	<enginecover type="int">0</enginecover>
   </model> 
 <rendering>
 <refl_correction type="string">-0.1</refl_correction>
@@ -116,7 +125,7 @@ faber@sol2500.net
 Flaps down 20 degrees, Trim slightly nose down. Take off at 1.4 ata (Full Throttle), Keep Tail down until Aircraft flies itself off. Climb at 1.3 ata, Cruise with 1.2 ata.
 ---Landing---
 lower Flaps and Gear under 200 km/h. Approach Speed is 150 km/h or less. Speed at Treshold should be 100 - 110 km/h. If too fast the Aircraft is likly to lift off again. In that case try a 2-wheel landing.
-Don't forget to release Tailwheel lock (Ctrl-l) before taxiing off the Runway.</text>
+Don't forget to release Tailwheel lock (l) before taxiing off the Runway.</text>
   </help>
 	<menubar>
 		<default>
@@ -219,9 +228,9 @@ Don't forget to release Tailwheel lock (Ctrl-l) before taxiing off the Runway.</
 
  <input>
    <keyboard>
-      <key n="12"> 
-          <name>Ctrl-L</name>
-          <desc>Toggle Tailwheel Lock.</desc>
+ 			<key n="108">
+  				<name>l</name>
+          <desc>Toggle Tailwheel Lock</desc>
           <binding> 
             <command>property-toggle</command>
             <property>controls/gear/tailwheel-lock</property>
