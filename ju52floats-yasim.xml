@@ -8,31 +8,25 @@ YASim aerodynamic model for a Ju-52 3/m
 <airplane mass="12158">
 
 <!-- Approach configuration -->
-<approach speed="74" aoa="11">
-  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
-  <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65"/>
-  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.7"/>
-  <control-setting axis="/controls/engines/engine[1]/throttle" value="0.3"/>
-  <control-setting axis="/controls/engines/engine[1]/mixture" value="0.65"/>
-  <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="0.7"/>
-  <control-setting axis="/controls/engines/engine[2]/throttle" value="0.3"/>
-  <control-setting axis="/controls/engines/engine[2]/mixture" value="0.65"/>
-  <control-setting axis="/controls/engines/engine[2]/propeller-pitch" value="0.7"/>
+<approach speed="60" aoa="12">
+  <control-setting axis="/controls/engines/engine[0]/throttle-c" value="0.5"/>
+  <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[1]/throttle-c" value="0.5"/>
+  <control-setting axis="/controls/engines/engine[1]/mixture" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[2]/throttle-c" value="0.5"/>
+  <control-setting axis="/controls/engines/engine[2]/mixture" value="1.0"/>
   <control-setting axis="/controls/flight/flaps" value="1.0"/>
   <control-setting axis="/controls/gear/gear-down" value="1"/>
 </approach>
 
 <!-- Cruise configuration -->
-<cruise speed="154" alt="4595">
-  <control-setting axis="/controls/engines/engine[0]/throttle" value="1.00"/>
-  <control-setting axis="/controls/engines/engine[0]/mixture" value="1.00"/>
-  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.7"/>
-  <control-setting axis="/controls/engines/engine[1]/throttle" value="1.00"/>
-  <control-setting axis="/controls/engines/engine[1]/mixture" value="1.00"/>
-  <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="0.7"/>
-  <control-setting axis="/controls/engines/engine[2]/throttle" value="1.00"/>
-  <control-setting axis="/controls/engines/engine[2]/mixture" value="1.00"/>
-  <control-setting axis="/controls/engines/engine[2]/propeller-pitch" value="0.7"/>
+<cruise speed="145" alt="4595">
+  <control-setting axis="/controls/engines/engine[0]/throttle-c" value="1.00"/>
+  <control-setting axis="/controls/engines/engine[0]/mixture" value="0.8"/>
+  <control-setting axis="/controls/engines/engine[1]/throttle-c" value="1.00"/>
+  <control-setting axis="/controls/engines/engine[1]/mixture" value="0.8"/>
+  <control-setting axis="/controls/engines/engine[2]/throttle-c" value="1.00"/>
+  <control-setting axis="/controls/engines/engine[2]/mixture" value="0.8"/>
   <control-setting axis="/controls/flight/flaps" value="0.0"/>
   <control-setting axis="/controls/gear/gear-down" value="0"/>
 </cruise>
@@ -42,7 +36,7 @@ YASim aerodynamic model for a Ju-52 3/m
 
 <!--fuselage --> 
 <fuselage ax="-0.4" ay="0.0" az="0.0" bx="-2.0" by="0.0" bz="-0.19"
-          width="1.7" taper="0.6" midpoint="1"/>
+          width="1.7" taper="0.6" midpoint="1" idrag="0.2"/>
 <fuselage ax="-2.0" ay="0.0" az="-0.07" bx="-2.3" by="0.0" bz="-0.07"
           width="2.2" taper="0.8" midpoint="1.0"/>
 <fuselage ax="-2.3" ay="0.0" az="-0.07" bx="-4.3" by="0.0" bz="-0.07"
@@ -64,10 +58,10 @@ YASim aerodynamic model for a Ju-52 3/m
           width="0.9" taper="0.3" midpoint="0.1"/>
 
 <wing x="-6.1" y="0.9" z="-1.1" taper="0.3" incidence="2" dihedral="5.5"
-      length="13.5" chord="5.4" sweep="1.8"  camber="0.0">
-  <stall aoa="12" width="4" peak="1.5"/>
-  <flap0 start="0.048" end="0.33" lift="1.4" drag="1.8"/>
-  <flap1 start="0.33" end="1.0" lift="1.2" drag="1.4"/>
+      length="12.5" chord="5.4" sweep="1.8" idrag="0.6" camber="0.15">
+  <stall aoa="12" width="6" peak="1.9"/>
+  <flap0 start="0.048" end="0.33" lift="1.4" drag="2.0"/>
+  <flap1 start="0.33" end="1.0" lift="1.4" drag="1.4"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
   <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
   <control-speed control="FLAP0" transition-time="10"/>
@@ -77,9 +71,9 @@ YASim aerodynamic model for a Ju-52 3/m
 
 <hstab x="-16.34" y="0.4" z="0.84" taper="0.7" 
        length="4.34" chord="2.3" sweep="3" >
-  <stall aoa="15" width="4" peak="2.0"/>
-  <flap0 start="0.0" end="1.0" lift="1.85" drag="1.2"/>
-  <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+  <stall aoa="14" width="4" peak="2.0"/>
+  <flap0 start="0.0" end="1.0" lift="2.5" drag="1.6" />
+  <control-input axis="/controls/flight/elevator" control="FLAP0" square="true"/>
   <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
   <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
 </hstab>
@@ -88,7 +82,7 @@ YASim aerodynamic model for a Ju-52 3/m
 <vstab x="-17.0" y="0" z="0.4" taper="0.5"
        length="3.0" chord="3.7" sweep="19">
   <stall aoa="15" width="4" peak="2.9"/>
-  <flap0 start="0" end="1.0" lift="2.0" drag="2.3"/>
+  <flap0 start="0" end="1.0" lift="2.2" drag="1.9"/>
   <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
   <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
   <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
@@ -98,17 +92,19 @@ YASim aerodynamic model for a Ju-52 3/m
 <!-- left engine-->
 <propeller   x="-2.3" y="3.5" z="-0.8"
            radius="1.7" 
-           mass="1155" moment="60.5"
-           cruise-alt="500" cruise-power="720"
-           cruise-speed="168" cruise-rpm="1364"
+           mass="1155" moment="50.5"
+           cruise-alt="500" cruise-power="620"
+           cruise-speed="118" cruise-rpm="1110"
+					 takeoff-power="880"
+					 takeoff-rpm="1330"
            gear-ratio="0.6">
-	<dir x="1.0" y="0.14" z="0"/>
+	<dir x="1.0" y="-0.14" z="0"/>
   <actionpt x="-2.3" y="3.8" z="-0.8"/>
   <piston-engine
     eng-power="890" eng-rpm="2350"
     turbo-mul="1.2" wastegate-mp="61"
     >
-    <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+    <control-input axis="/controls/engines/engine[0]/throttle-c" control="THROTTLE"/>
     <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
     <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
     <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
@@ -118,16 +114,18 @@ YASim aerodynamic model for a Ju-52 3/m
 
 <propeller   x="-0.3" y="0.0" z="0"
            radius="1.7" 
-           mass="1155" moment="60.5"
-           cruise-alt="500" cruise-power="720"
-           cruise-speed="168" cruise-rpm="1364"
+           mass="1155" moment="50.5"
+           cruise-alt="500" cruise-power="620"
+           cruise-speed="118" cruise-rpm="1110"
+					 takeoff-power="880"
+					 takeoff-rpm="1330"
            gear-ratio="0.6">
   <actionpt x="-0.1" y="0.0" z="-0.0"/>
   <piston-engine
     eng-power="890" eng-rpm="2350"
     turbo-mul="1.2" wastegate-mp="61"
     >
-    <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
+    <control-input axis="/controls/engines/engine[1]/throttle-c" control="THROTTLE"/>
     <control-input axis="/controls/engines/engine[1]/starter" control="STARTER"/>
     <control-input axis="/controls/engines/engine[1]/magnetos" control="MAGNETOS"/>
     <control-input axis="/controls/engines/engine[1]/mixture" control="MIXTURE"/>
@@ -139,17 +137,19 @@ YASim aerodynamic model for a Ju-52 3/m
 <!--right engine-->
 <propeller   x="-2.3" y="-3.5" z="-0.8"
            radius="1.7" 
-           mass="1155" moment="60.5"
-           cruise-alt="500" cruise-power="720"
-           cruise-speed="168" cruise-rpm="1364"
+           mass="1155" moment="50.5"
+           cruise-alt="500" cruise-power="620"
+           cruise-speed="118" cruise-rpm="1110"
+					 takeoff-power="880"
+					 takeoff-rpm="1330"
            gear-ratio="0.6">
-	<dir x="1.0" y="-0.14" z="0"/>
+	<dir x="1.0" y="0.14" z="0"/>
   <actionpt x="-2.3" y="-3.8" z="-0.8"/>
   <piston-engine
     eng-power="890" eng-rpm="2350"
     turbo-mul="1.2" wastegate-mp="61"
     >
-    <control-input axis="/controls/engines/engine[2]/throttle" control="THROTTLE"/>
+    <control-input axis="/controls/engines/engine[2]/throttle-c" control="THROTTLE"/>
     <control-input axis="/controls/engines/engine[2]/starter" control="STARTER"/>
     <control-input axis="/controls/engines/engine[2]/magnetos" control="MAGNETOS"/>
     <control-input axis="/controls/engines/engine[2]/mixture" control="MIXTURE"/>
@@ -212,15 +212,10 @@ YASim aerodynamic model for a Ju-52 3/m
 <tank x="-5.8" y="6.0" z="-0.28" capacity="2116"/> 
 <tank x="-5.8" y="-6.0" z="-0.28" capacity="2116"/> 
 
- <!-- pilots -->
-<ballast x="-2.9" y="-0.4" z="0.2" mass="480"/>
-<ballast x="-2.9" y="0.4" z="0.2" mass="480"/>
 
-<!-- Load -->
+<ballast x="-1.9" y="0.0" z="0.2" mass="2100"/>
+
+
 <weight x="-6.7" y="0.0" z="-0.45" mass-prop="sim/weight[0]/weight-lb" size="0.0" />
-<!-- Floats 
-<weight x="-4.2" y="2.35" z="-3.2" mass-prop="sim/weight[1]/weight-lb" size="1.5" />
-<weight x="-4.2" y="-2.35" z="-3.2" mass-prop="sim/weight[2]/weight-lb" size="1.5" />
--->
 
 </airplane>

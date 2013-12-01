@@ -4,17 +4,17 @@
 <sim>
     <model>
         <livery>
-            <name type="string">Swiss</name>
+            <name type="string">Lufthansa (today)</name>
 
-            <texture>ju52-1.png</texture>
-            <texture-cowl>ju52-1.png</texture-cowl>
+            <texture>Liveries/D-AQUI.png</texture>
+            <texture-cowl>Liveries/D-AQUI.png</texture-cowl>
 						<texture-floats>floats.png</texture-floats>
 						<amb_correction type="float">0.0</amb_correction>
 						<refl_correction type="float">0.2</refl_correction>
         </livery>
 				<variant type="int">0</variant>
 				<reargun type="int">0</reargun>
-				<wheelcover type="int">0</wheelcover>
+				<wheelcover type="int">1</wheelcover>
 				<enginecover type="int">0</enginecover>
     </model>
 		<view n="102">

@@ -4,11 +4,94 @@
 
 <PropertyList>
 
+  <nasal>
+    <load>
+      var update = aircraft.overlay_update.new();
+      update.add("Aircraft/ju52/Models/Liveries", "sim/model/livery/file");
+
+				var self = cmdarg();
+		#	var pilot_node = self.getNode("sim/model/crew/pilot");
+		#	io.read_properties("Aircraft/ju52/Models/Human/fighterpilot50_pose.xml", pilot_node);
+
+      var target_in = self.getNode("sim/multiplay/generic/string[1]", 1);
+      var variant_in = self.getNode("sim/multiplay/generic/int[0]", 1);
+
+			var failure_in = self.getNode("sim/multiplay/generic/int[10]", 1);
+
+
+			var variant_out = self.getNode("sim/model/variant",1);
+
+			var failure_out = self.getNode("sim/failure-manager/fail-type", 1);
+
+
+			var hitcount = self.getNode("hitcount",1);
+			var MPmodel = self.getNode("sim/model/MPmodel",1);
+			MPmodel.setValue(1);
+			var hit_x = self.getNode("combat/hit/hit_x",1);
+			var hit_y = self.getNode("combat/hit/hit_y",1);
+			var hit_z = self.getNode("combat/hit/hit_z",1);
+
+			hitcount.setValue(0);
+      var hitcount_in = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var hitx_in = self.getNode("sim/multiplay/generic/float[1]", 1);
+      var hity_in = self.getNode("sim/multiplay/generic/float[2]", 1);
+      var hitz_in = self.getNode("sim/multiplay/generic/float[3]", 1);
+			
+			var combat = self.getNode("combat",1);
+			combat.setValue("true");
+			var size = self.getNode("size",1);
+			size.setValue(9);
+
+			var loopid = 0;
+			var loop = func(id) {
+			variant_out.setValue(variant_in.getValue());
+
+			failure_out.setValue(failure_in.getValue());
+
+			var ownsign = getprop ("/sim/multiplay/callsign");
+			if (target_in.getValue() == ownsign ) {
+					var hits0 = getprop("/hitcount" );
+					var hits1 = hitcount_in.getValue();
+
+					if (hits1 > hits0) {
+						#	var hitx = hitx_in.getValue();
+						#	var hity = hity_in.getValue();
+						#	var hitz = hitz_in.getValue();
+							print ("Damn, I'm hit!", hits0," ",hits1);
+							setprop("/hitcount" , hits1);
+						#	setprop("combat/hit/hit_x", hitx);
+						#	setprop("combat/hit/hit_y", hity);
+						#	setprop("combat/hit/hit_z", hitz);
+							
+							failure.process_hit();				
+					}
+			}
+
+				id == loopid or return;
+#				var v = hitcount.getValue();
+#				print ("Hitcount: ",v);			# debug output
+#				if (v != nil and 0 > v) {	# 
+#					print ("Ouch!");					# debug output
+
+#					loopid += 1;							# end loop
+#				}
+				settimer(func { loop(id) }, 0);
+			}
+			settimer(func { loop(loopid) }, 0);
+
+    </load>
+    <unload>
+			print ("bye");
+			loopid += 1;
+    </unload>
+  </nasal>
+
  <path>ju52.ac</path>
 <!-- Effects-->
 <effect>
-	<inherits-from>Aircraft/ju52/Models/Effects/ju52_reflect</inherits-from> <!--FGFS 2.0 -->
+	<inherits-from>Effects/ju52_effect</inherits-from> <!--FGFS 2.0 -->
 	<object-name>fuselage</object-name>
+	<object-name>roofhatch</object-name>
 	<object-name>cowling.L</object-name>
 	<object-name>cowlmid</object-name>
 	<object-name>cowling.R</object-name>
@@ -16,8 +99,10 @@
 	<object-name>rudder</object-name>
 	<object-name>hstab.L</object-name>
 	<object-name>hstab.R</object-name>
-	<object-name>wing.R</object-name>
-	<object-name>wing.L</object-name>
+	<object-name>wing1.R</object-name>
+	<object-name>wing1.L</object-name>
+	<object-name>wing0.R</object-name>
+	<object-name>wing0.L</object-name>
 	<object-name>flap.R</object-name>
 	<object-name>flap.L</object-name>
 	<object-name>aileron.R</object-name>
@@ -39,34 +124,51 @@
 		<type>shader</type>
 		<shader>chrome</shader>
 		<texture>Aircraft/ju52/Models/glass_shader.png</texture>
-		<object-name>cockpitglass</object-name>
-		<object-name>roofglass</object-name>
+		<object-name>cabin.glass</object-name>
+		<object-name>cabinroof.glass</object-name>
 		<object-name>windows</object-name>
-		<object-name>windows2</object-name>
+		<object-name>frontwindows</object-name>
+		<object-name>rear.wglass</object-name>
 		<object-name>rightdoorglass</object-name>
 		<object-name>leftdoorglass</object-name>
 	</animation>
 
 	<model>
-		<name>cockpit</name>
-		<path>Aircraft/ju52/Models/cockpit.xml</path>
+		<name>interiour</name>
+		<path>Aircraft/ju52/Models/interiour.xml</path>
 	</model>
-	<animation>
-  <object-name>cockpit</object-name>
-		<type>range</type>
-		<min-m>0</min-m>
-		<max-m>10</max-m>
-	</animation>
+
+    <model> 
+      <path>Aircraft/Generic/Human/Models/pilot.xml</path>
+	  <name>pilot</name>
+		<nopreview/>
+      <offsets> 
+        <x-m>3.0384</x-m>
+        <y-m>-0.4858</y-m>
+        <z-m>-0.25</z-m>
+      </offsets>
+    </model>
+
+    <model> 
+      <path>Aircraft/Generic/Human/Models/copilot.xml</path>
+	  <name>pilot</name>
+		<nopreview/>
+      <offsets> 
+        <x-m>3.0384</x-m>
+        <y-m>0.4858</y-m>
+        <z-m>-0.25</z-m>
+      </offsets>
+    </model>
 
  <animation>
   <type>select</type>
   <object-name>rear.windows</object-name>
   <object-name>rear.wglass</object-name>
   <condition>
-   <equals>
+   <less-than>
     <property>sim/model/variant</property>
-    <value>0</value>
-   </equals>
+    <value>5</value>
+   </less-than>
   </condition>
  </animation>
 
@@ -75,10 +177,10 @@
   <object-name>rear.door1</object-name>
   <object-name>rear.door2</object-name>
   <condition>
-   <equals>
+   <greater-than>
     <property>sim/model/variant</property>
-    <value>1</value>
-   </equals>
+    <value>4</value>
+   </greater-than>
   </condition>
  </animation>
 
@@ -103,6 +205,69 @@
     <value>0</value>
    </equals>
   </condition>
+ </animation>
+
+ <model>
+  <name>mg15-top</name>
+  <path>Aircraft/ju52/Models/mg15.xml</path>
+  <offsets>
+   <x-m>12.9</x-m>
+   <y-m>0.0</y-m>
+   <z-m>1.2368</z-m>
+		<heading-deg>180</heading-deg>
+  </offsets>
+ </model>
+
+ <animation>
+  <type>select</type>
+  <object-name>gunnerposition</object-name>
+  <object-name>lafette1</object-name>
+  <object-name>lafette2</object-name>
+  <object-name>gunnershield</object-name>
+  <object-name>gunnershieldglass</object-name>
+  <object-name>mg15-top</object-name>
+  <condition>
+   <equals>
+    <property>sim/model/reargun</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>lafette1</object-name>
+  <object-name>lafette2</object-name>
+  <object-name>mg15-top</object-name>
+  <property>sim/armament/gun[0]/heading-deg</property>
+
+  <center>
+   <x-m>12.30507</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>0.0</y>
+   <z>1.0</z>
+   </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>lafette2</object-name>
+  <object-name>mg15-top</object-name>
+  <property>sim/armament/gun[0]/elevation-deg</property>
+
+  <center>
+   <x-m>12.30507</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+   </axis>
  </animation>
 
  <animation>
@@ -181,61 +346,7 @@
     </offsets>
   </model>
 
- <!-- non-panel models -->
 
- <animation>
-  <type>rotate</type>
-  <object-name>leftyoke</object-name>
-  <object-name>leftyokewheel</object-name>
-  <object-name>rightyoke</object-name>
-  <object-name>rightyokewheel</object-name>
-  <property>controls/flight/elevator</property>
-  <factor>-10</factor>
-  <center>
-   <x-m>2.568</x-m>
-   <y-m>-0.405</y-m>
-   <z-m>-0.298</z-m>
-  </center>
-  <axis>
-   <x>0.0</x>
-   <y>1.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>rotate</type>
-  <object-name>leftyokewheel</object-name>
-  <property>controls/flight/aileron</property>
-  <factor>-50</factor>
-  <center>
-   <x-m>2.635</x-m>
-   <y-m>-0.485</y-m>
-   <z-m>0.489</z-m>
-  </center>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
-
-<animation>
-  <type>rotate</type>
-  <object-name>rightyokewheel</object-name>
-  <property>controls/flight/aileron</property>
-  <factor>-50</factor>
-  <center>
-   <x-m>2.635</x-m>
-   <y-m>0.485</y-m>
-   <z-m>0.489</z-m>
-  </center>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
  
  <animation>
   <type>rotate</type>
@@ -515,6 +626,7 @@
   </axis>
  </animation>
 
+<!-- doors -->
  <animation>
   <type>rotate</type>
   <object-name>leftdoor</object-name>
@@ -569,9 +681,55 @@
    </axis>
  </animation>
 
+ <animation>
+  <type>rotate</type>
+  <object-name>rear.door2</object-name>
+  <property>controls/gear/freightdoor2-pos-norm</property>
+	<factor>-90</factor>
+
+  <axis>
+        <x1-m>10.16653</x1-m>
+        <y1-m>0.86921</y1-m>
+        <z1-m>0.76852</z1-m>
+        <x2-m>7.95052</x2-m>
+        <y2-m>0.86921</y2-m>
+        <z2-m>0.81365</z2-m>
+   </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>rear.door1</object-name>
+  <property>controls/gear/freightdoor1-pos-norm</property>
+	<factor>100</factor>
+
+  <axis>
+        <x1-m>10.16580</x1-m>
+        <y1-m>0.86921</y1-m>
+        <z1-m>-0.72400</z1-m>
+        <x2-m>7.94401</x2-m>
+        <y2-m>0.86921</y2-m>
+        <z2-m>-0.73805</z2-m>
+   </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>roofhatch</object-name>
+  <property>controls/gear/roofdoor-pos-norm</property>
+	<factor>100</factor>
+  <axis>
+        <x1-m>6.13492</x1-m>
+        <y1-m>-0.49577</y1-m>
+        <z1-m>1.31766</z1-m>
+        <x2-m>7.95052</x2-m>
+        <y2-m>-0.49577</y2-m>
+        <z2-m>1.28461</z2-m>
+   </axis>
+ </animation>
+
   <animation>
     <type>material</type>
     <object-name>fuselage</object-name>
+	<object-name>roofhatch</object-name>
     <object-name>wing.L</object-name>
     <object-name>aileron.L</object-name>
     <object-name>flap.L</object-name>
@@ -579,8 +737,10 @@
     <object-name>rightgear2</object-name>
     <object-name>vstab</object-name>
     <object-name>hstab.L</object-name>
-    <object-name>wing.L</object-name>
-    <object-name>wing.R</object-name>
+    <object-name>wing0.L</object-name>
+    <object-name>wing0.R</object-name>
+    <object-name>wing1.L</object-name>
+    <object-name>wing1.R</object-name>
     <object-name>aileron.L</object-name>
     <object-name>aileron.R</object-name>
     <object-name>flap.R</object-name>
@@ -616,7 +776,109 @@
     <texture-prop>texture-cowl</texture-prop>
 		<texture>ju52-1-1.png</texture>
   </animation>
+<!-- startup smoke left engine -->
+ <model>
+    <name>startup0-0</name>
+    <path>Aircraft/ju52/Models/Effects/startupsmoke.xml</path>
+    <offsets>
+   <x-m>3.71369</x-m>
+   <y-m>-4.17526</y-m>
+   <z-m>-0.67674</z-m>
+	 <heading-deg>-40</heading-deg>
+	 <pitch-deg>60</pitch-deg>
+    </offsets>
+  </model>
+ <model>
+    <name>startup0-1</name>
+    <path>Aircraft/ju52/Models/Effects/startupsmoke.xml</path>
+    <offsets>
+   <x-m>3.60966</x-m>
+   <y-m>-2.94688</y-m>
+   <z-m>-0.76584</z-m>
+	 <heading-deg>40</heading-deg>
+	 <pitch-deg>60</pitch-deg>
+    </offsets>
+  </model>
+ <animation>
+  <type>select</type>
+  <object-name>startup0-1</object-name>
+  <object-name>startup0-0</object-name>
+  <condition>
+   <equals>
+    <property>engines/engine[0]/startup_smoke</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
 
+<!-- startup smoke mid engine -->
+ <model>
+    <name>startup1-0</name>
+    <path>Aircraft/ju52/Models/Effects/startupsmoke.xml</path>
+    <offsets>
+   <x-m>1.40351</x-m>
+   <y-m>-0.69899</y-m>
+   <z-m>-0.69899</z-m>
+	 <heading-deg>40</heading-deg>
+	 <pitch-deg>60</pitch-deg>
+    </offsets>
+  </model>
+ <model>
+    <name>startup1-1</name>
+    <path>Aircraft/ju52/Models/Effects/startupsmoke.xml</path>
+    <offsets>
+   <x-m>1.40351</x-m>
+   <y-m>0.69899</y-m>
+   <z-m>-0.69899</z-m>
+	 <heading-deg>-40</heading-deg>
+	 <pitch-deg>60</pitch-deg>
+    </offsets>
+  </model>
+ <animation>
+  <type>select</type>
+  <object-name>startup1-1</object-name>
+  <object-name>startup1-0</object-name>
+  <condition>
+   <equals>
+    <property>engines/engine[1]/startup_smoke</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
 
+<!-- startup smoke right engine -->
+ <model>
+    <name>startup2-0</name>
+    <path>Aircraft/ju52/Models/Effects/startupsmoke.xml</path>
+    <offsets>
+   <x-m>3.71369</x-m>
+   <y-m>4.17526</y-m>
+   <z-m>-0.67674</z-m>
+	 <heading-deg>40</heading-deg>
+	 <pitch-deg>60</pitch-deg>
+    </offsets>
+  </model>
+ <model>
+    <name>startup2-1</name>
+    <path>Aircraft/ju52/Models/Effects/startupsmoke.xml</path>
+    <offsets>
+   <x-m>3.60966</x-m>
+   <y-m>2.94688</y-m>
+   <z-m>-0.76584</z-m>
+	 <heading-deg>-40</heading-deg>
+	 <pitch-deg>60</pitch-deg>
+    </offsets>
+  </model>
+ <animation>
+  <type>select</type>
+  <object-name>startup2-1</object-name>
+  <object-name>startup2-0</object-name>
+  <condition>
+   <equals>
+    <property>engines/engine[2]/startup_smoke</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
 
 </PropertyList>

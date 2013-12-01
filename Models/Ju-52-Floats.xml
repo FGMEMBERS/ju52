@@ -8,7 +8,7 @@
 
 <!-- Effects-->
 <effect>
-	<inherits-from>Aircraft/ju52/Models/Effects/ju52_reflect</inherits-from> <!--FGFS 2.0 -->
+	<inherits-from>Aircraft/ju52/Models/Effects/ju52_reflect</inherits-from> 
 	<object-name>fuselage</object-name>
 	<object-name>cowling.L</object-name>
 	<object-name>cowlmid</object-name>
@@ -27,7 +27,6 @@
 	<object-name>elevator.L</object-name>
 	<object-name>rightdoor</object-name>
 	<object-name>leftdoor</object-name>
-	
 	<object-name>ladder</object-name>
 	<object-name>struts.L</object-name>
 	<object-name>struts.R</object-name>
@@ -81,14 +80,14 @@
  </animation>
 
 	<model>
-		<name>cockpit</name>
-		<path>Aircraft/ju52/Models/cockpit.xml</path>
+		<name>interiour</name>
+		<path>Aircraft/ju52/Models/interiour.xml</path>
 	</model>
 	<animation>
-  <object-name>cockpit</object-name>
+  <object-name>interiour</object-name>
 		<type>range</type>
 		<min-m>0</min-m>
-		<max-m>10</max-m>
+		<max-m>1000</max-m>
 	</animation>
 
 
@@ -435,118 +434,6 @@
    </axis>
  </animation>
 
-<animation>
-  <type>rotate</type>
-  <object-name>wheel.R</object-name>
-  <object-name>rightgear1</object-name>
-  <object-name>rightgear2</object-name>
-  <property>gear/gear[1]/compression-norm</property>
-  <interpolation>
-   <entry>
-    <ind>0.0</ind>
-    <dep>2.0</dep>
-   </entry>
-   <entry>
-    <ind>0.50</ind>
-    <dep>8.0</dep>
-   </entry>
-   <entry>
-    <ind>1.00</ind>
-    <dep>12.0</dep>
-   </entry>
-  </interpolation>
-  <center>
-   <x-m>5.400</x-m>
-   <y-m>0.842</y-m>
-   <z-m>-1.441</z-m>
-  </center>
-  <axis>
-    <x1-m>4.496</x1-m>
-    <y1-m>0.837</y1-m>
-    <z1-m>-1.414</z1-m>
-    <x2-m>6.085</x2-m>
-    <y2-m>0.866</y2-m>
-    <z2-m>-1.454</z2-m>
-  </axis>
- </animation>
- 
- <animation>
-  <type>rotate</type>
-  <object-name>wheel.L</object-name>
-  <object-name>leftgear1</object-name>
-  <object-name>leftgear2</object-name>
-  <property>gear/gear[0]/compression-norm</property>
-  <interpolation>
-   <entry>
-    <ind>0.0</ind>
-    <dep>-2.0</dep>
-   </entry>
-   <entry>
-    <ind>0.50</ind>
-    <dep>-8.0</dep>
-   </entry>
-   <entry>
-    <ind>1.00</ind>
-    <dep>-12.0</dep>
-   </entry>
-  </interpolation>
-  <center>
-   <x-m>5.400</x-m>
-   <y-m>-0.842</y-m>
-   <z-m>-1.441</z-m>
-  </center>
-  <axis>
-    <x1-m>4.496</x1-m>
-    <y1-m>-0.837</y1-m>
-    <z1-m>-1.414</z1-m>
-    <x2-m>6.085</x2-m>
-    <y2-m>-0.866</y2-m>
-    <z2-m>-1.454</z2-m>
-  </axis>
- </animation>
-
-
-
- <animation>
-  <type>spin</type>
-  <object-name>wheel.R</object-name>
-  <property>gear/gear[1]/rollspeed-ms</property>
-  <factor>5.5</factor>
-  <center>
-   <x-m>4.611</x-m>
-   <y-m>1.871</y-m>
-   <z-m>-2.560</z-m>
-  </center>
-  <axis>
-    <x1-m>4.611</x1-m>
-    <y1-m>2.180</y1-m>
-    <z1-m>-2.622</z1-m>
-    <x2-m>4.611</x2-m>
-    <y2-m>1.874</y2-m>
-    <z2-m>-2.560</z2-m>
-  </axis>
- </animation>
-
-
- <animation>
-  <type>spin</type>
-  <object-name>wheel.L</object-name>
-  <property>gear/gear[0]/rollspeed-ms</property>
-  <factor>-5.5</factor>
-  <center>
-   <x-m>4.611</x-m>
-   <y-m>-1.871</y-m>
-   <z-m>-2.560</z-m>
-  </center>
-  <axis>
-    <x1-m>4.611</x1-m>
-    <y1-m>-2.180</y1-m>
-    <z1-m>-2.622</z1-m>
-    <x2-m>4.611</x2-m>
-    <y2-m>-1.874</y2-m>
-    <z2-m>-2.560</z2-m>
-  </axis>
- </animation>
 
  <animation>
   <type>rotate</type>
@@ -619,6 +506,61 @@
    <z-m>-3.5</z-m>
   </offsets>
  </model>
+ 
+ <!--model>
+    <path>Aircraft/Junkers-W34/Models/Effects/wakes/wakeGA.xml</path>
+    <offsets>
+      <x-m>  1.8959 </x-m>
+      <y-m>  2.44000 </y-m>
+      <z-m> -2.85789 </z-m>
+      <pitch-deg> -38 </pitch-deg>
+    </offsets>
+  </model> 
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Effects/wakes/wakeDA.xml</path>
+    <offsets>
+      <x-m>  1.8959 </x-m>
+      <y-m> -2.44000 </y-m>
+      <z-m> -2.85789 </z-m>
+      <pitch-deg> -38 </pitch-deg>
+    </offsets>
+  </model> 
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Effects/wakes/jetGA.xml</path>
+    <offsets>
+      <x-m> -5.48998 </x-m>
+      <y-m>  2.44000 </y-m>
+      <z-m> -2.94733 </z-m>
+      <pitch-deg> -35 </pitch-deg>
+    </offsets>
+  </model> 
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Effects/wakes/jetDA.xml</path>
+    <offsets>
+      <x-m> -5.48998 </x-m>
+      <y-m> -2.44000 </y-m>
+      <z-m> -2.94733 </z-m>
+      <pitch-deg> -35 </pitch-deg>
+    </offsets>
+  </model> 
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Effects/wakes/jetmGA.xml</path>
+    <offsets>
+      <x-m> -0.00000 </x-m>
+      <y-m> -2.44000 </y-m>
+      <z-m> -3.44000 </z-m>
+      <pitch-deg> 0 </pitch-deg>
+    </offsets>
+  </model> 
+  <model>
+    <path>Aircraft/Junkers-W34/Models/Effects/wakes/jetmDA.xml</path>
+    <offsets>
+      <x-m> -0.00000 </x-m>
+      <y-m>  2.44000 </y-m>
+      <z-m> -3.50000 </z-m>
+      <pitch-deg> 0 </pitch-deg>
+    </offsets>
+  </model-->
 
 
   <animation>
@@ -631,8 +573,10 @@
     <object-name>rightgear2</object-name>
     <object-name>vstab</object-name>
     <object-name>hstab.L</object-name>
-    <object-name>wing.L</object-name>
-    <object-name>wing.R</object-name>
+    <object-name>wing0.L</object-name>
+    <object-name>wing0.R</object-name>
+    <object-name>wing1.L</object-name>
+    <object-name>wing1.R</object-name>
     <object-name>aileron.L</object-name>
     <object-name>aileron.R</object-name>
     <object-name>flap.R</object-name>

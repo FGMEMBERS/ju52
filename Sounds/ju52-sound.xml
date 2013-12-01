@@ -1,0 +1,377 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+
+ <fx>
+ 
+ 
+   	<Radio>
+      <name>Signal</name>
+      <mode>looped</mode>
+	  <type>avionics</type>
+      <path>Aircraft/Junkers-W34/Sounds/radio.wav</path>
+        <condition>
+     		<and>
+		     <greater-than>
+		       <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+		       <value>442.98</value>
+		     </greater-than>
+		     <less-than>
+		       <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+		       <value>513.02</value>
+		     </less-than>
+		    </and>
+        </condition>
+        <volume>
+			<offset>1</offset>
+            <factor>2</factor>
+		</volume>
+    </Radio>
+  
+    <ocean-outside>
+      <name>water2</name>
+      <mode>looped</mode>
+      <path>Aircraft/Junkers-W34/Sounds/newwave.wav</path>
+	  
+  <condition>
+    <not>   
+        <property>/sim/current-view/internal</property>
+    </not>
+  </condition>
+
+      <volume>
+        <property>position/gear-agl-m</property>
+        <factor>-0.0009</factor>
+        <offset>0.235</offset>
+        <min>0.01</min>
+        <max>0.235</max>
+      </volume>
+    </ocean-outside>
+	
+ 
+<!-- Engine 1 -->
+   <crank>
+      <name>eng1start</name>
+	  <mode>looped</mode>
+      <path>Aircraft/ju52/Sounds/start.wav</path>
+      <property>/engines/engine[0]/cranking</property>
+      <volume>
+        <offset>0.4</offset>
+      </volume>
+   <volume>
+        <property>/sim/current-view/internal</property>
+        <offset>0.4</offset>
+        <factor>-0.3</factor>
+   </volume>
+   <pitch>
+        <property>/engines/engine[0]/rpm</property>
+        <factor>0.003</factor>
+        <min> 7</min>
+        <max> 8.4</max>
+   </pitch>
+   <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
+
+  <!--crank>
+   <name>crank1</name>
+   <mode>looped</mode>
+   <path>Sounds/cranking.wav</path>
+   <condition>
+    <property>/engines/engine[0]/cranking</property>
+    <not>
+     <property>/engines/engine[0]/running</property>
+    </not>
+   </condition>
+   <volume>
+    <offset>0.5</offset>
+   </volume>
+  </crank>
+
+  <crank>
+   <name>cough1</name>
+   <path>Sounds/coughing.wav</path>
+   <property>/engines/engine[0]/running</property>
+   <volume>
+    <offset>0.3</offset>
+   </volume>
+  </crank-->
+
+  <engine>
+   <name>engine1_idle</name>
+   <mode>looped</mode>
+   <path>Aircraft/ju52/Sounds/ngine_idle.wav</path>
+   <condition>
+     <property>/engines/engine[0]/running</property>
+     <less-than>
+       <property>/engines/engine[0]/rpm</property>
+       <value>1300</value>
+     </less-than>
+	                <not-equals>
+							<property>sim/crashed</property>
+							<value>true</value>
+					</not-equals>
+   </condition>
+      <volume> 
+        <property>/sim/current-view/internal</property>
+        <offset>0.6</offset>
+        <factor>-0.3</factor>
+      </volume>
+      <pitch> 
+        <property>/engines/engine/rpm</property>
+        <factor>0.000942</factor>
+        <min>1</min>
+        <max>1.5</max>
+        <offset>0</offset>
+      </pitch>
+  </engine>
+
+  <engine>
+   <name>engine1_running</name>
+   <mode>looped</mode>
+   <path>Aircraft/ju52/Sounds/ngine_running.wav</path>
+   <condition>
+     <property>/engines/engine[0]/running</property>
+     <greater-than>
+       <property>/engines/engine[0]/rpm</property>
+       <value>1200</value>
+     </greater-than>
+	                <not-equals>
+							<property>sim/crashed</property>
+							<value>true</value>
+					</not-equals>
+   </condition>
+   <volume>
+        <property>/sim/current-view/internal</property>
+        <offset>0.7</offset>
+        <factor>-0.3</factor>
+   </volume>
+   <volume>
+    <property>/engines/engine[0]/rpm</property>
+    <factor>0.0007</factor>
+	<min>1</min>
+    <max>2</max>
+   </volume>
+   <pitch>
+    <property>/engines/engine[0]/rpm</property>
+    <factor>0.000397</factor>
+    <min>-0.81</min>
+    <max> 0.82</max>
+   </pitch>
+  </engine>
+
+<!-- Engine 2 -->
+
+    <crank>
+      <name>eng2start</name>
+	  <mode>looped</mode>
+      <path>Aircraft/ju52/Sounds/start.wav</path>
+      <property>/engines/engine[1]/cranking</property>
+      <volume>
+        <offset>0.4</offset>
+      </volume>
+   <volume>
+        <property>/sim/current-view/internal</property>
+        <offset>0.4</offset>
+        <factor>-0.3</factor>
+   </volume>
+   <pitch>
+        <property>/engines/engine[1]/rpm</property>
+        <factor>0.03</factor>
+        <min> 7</min>
+        <max> 8.4</max>
+   </pitch>
+   <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
+
+  <!--crank>
+   <name>crank2</name>
+   <mode>looped</mode>
+   <path>Sounds/cranking.wav</path>
+   <condition>
+    <property>/engines/engine[1]/cranking</property>
+    <not>
+     <property>/engines/engine[1]/running</property>
+    </not>
+   </condition>
+   <volume>
+    <offset>0.5</offset>
+   </volume>
+  </crank>
+
+  <crank>
+   <name>cough2</name>
+   <path>Sounds/coughing.wav</path>
+   <property>/engines/engine[1]/running</property>
+   <volume>
+    <offset>0.3</offset>
+   </volume>
+  </crank-->
+
+  <engine>
+   <name>engine2_idle</name>
+   <mode>looped</mode>
+   <path>Aircraft/ju52/Sounds/ngine_idle.wav</path>
+   <condition>
+     <property>/engines/engine[1]/running</property>
+     <less-than>
+       <property>/engines/engine[1]/rpm</property>
+       <value>1300</value>
+     </less-than>
+	                <not-equals>
+							<property>sim/crashed</property>
+							<value>true</value>
+					</not-equals>
+   </condition>
+   <volume> 
+        <property>/sim/current-view/internal</property>
+        <offset>0.6</offset>
+        <factor>-0.3</factor>
+      </volume>
+      <pitch> 
+        <property>/engines/engine[1]/rpm</property>
+        <factor>0.000902</factor>
+        <min>1</min>
+        <max>1.5</max>
+        <offset>0</offset>
+      </pitch>
+  </engine>
+
+  <engine>
+   <name>engine2_running</name>
+   <mode>looped</mode>
+   <path>Aircraft/ju52/Sounds/ngine_running.wav</path>
+   <condition>
+     <property>/engines/engine[1]/running</property>
+     <greater-than>
+       <property>/engines/engine[1]/rpm</property>
+       <value>1200</value>
+     </greater-than>
+	                <not-equals>
+							<property>sim/crashed</property>
+							<value>true</value>
+					</not-equals>
+   </condition>
+   <volume>
+        <property>/sim/current-view/internal</property>
+        <offset>0.7</offset>
+        <factor>-0.3</factor>
+   </volume>
+   <volume>
+    <property>/engines/engine[1]/rpm</property>
+    <factor>0.0007</factor>
+	<min>1</min>
+    <max>2</max>
+   </volume>
+   <pitch>
+    <property>/engines/engine[1]/rpm</property>
+    <factor>0.000409</factor>
+    <min>-0.8</min>
+    <max>0.8</max>
+   </pitch>
+  </engine>
+
+  <rumble>
+   <name>rumble</name>
+   <mode>looped</mode>
+   <path>Sounds/rumble.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <type>log</type>
+    <factor>0.5</factor>
+   </volume>
+  </rumble>
+
+  <squeal>
+   <name>squeal</name>
+   <path>Sounds/squeal.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/velocities/speed-down-fps</property>
+    <factor>0.05</factor>
+   </volume>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+   </volume>
+   <volume>
+    <internal>dt_stop</internal>
+    <factor>0.05</factor>
+    <max>1.0</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.0025</factor>
+    <offset>1.2</offset>
+   </pitch>
+  </squeal>
+ 
+  <flap>
+   <name>flaps</name>
+   <mode>in-transit</mode>
+   <path>Aircraft/ju52/Sounds/flap_move.wav</path>
+   <property>/surface-positions/flap-pos-norm</property>
+   <volume>
+    <factor>0.15</factor>
+   </volume>
+  </flap>
+
+  <wind>
+   <name>wind</name>
+   <mode>looped</mode>
+   <path>Sounds/wind.wav</path>
+   <property>/velocities/airspeed-kt</property>
+   <volume>
+    <property>/position/altitude-ft</property>
+    <factor>-0.000015</factor>
+    <offset>1.0</offset>
+    <min>0.1</min>
+    <max>0.5</max>
+   </volume>
+   <volume>
+     <property>/velocities/airspeed-kt</property>
+     <factor>0.0015</factor>
+     <min>0.03</min>
+     <max>0.25</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+    <offset>1.25</offset>
+   </pitch>
+  </wind>
+
+  <stall>
+   <name>stall</name>
+   <path>Aircraft/ju52/Sounds/stall_horn.wav</path>
+   <property>/sim/alarms/stall-warning</property>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <min>30.0</min>
+   </volume>
+  </stall>
+ 
+<!-- no binding yet?
+  <click>
+   <name>click</name>
+   <path>Sounds/click.wav</path>
+  </click>
+-->
+
+</fx>
+ 
+</PropertyList>

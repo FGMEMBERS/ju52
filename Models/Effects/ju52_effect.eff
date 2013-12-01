@@ -6,7 +6,7 @@
 		Remove unnedeed settings.
 		WARNING: do not remove the Normalmap include at the end-->
 <PropertyList>
-		<name>ju52_reflect</name>
+		<name>ju52_effect</name>
     <inherits-from>Effects/model-combined-deferred</inherits-from>
 		<parameters>
 		<!-- Normal Map -->
@@ -18,14 +18,12 @@
 			</texture>
 		<!-- Reflection -->
 			<reflection-enabled type="int"> 1 </reflection-enabled>
-			<reflect-map-enabled type="int"> 1 </reflect-map-enabled>
+			<reflect-map-enabled type="int"> 0 </reflect-map-enabled>
 			<reflection-correction>
 					<use>sim/model/livery/refl_correction</use>
 			</reflection-correction>
 			<reflection-dynamic type="int"> 0 </reflection-dynamic>
-			<texture n="4">
-				<image>Aircraft/ju52/Models/Liveries/D-AQUI30-sp.png</image>
-			</texture>
+
 			<texture n="5">
 				<type>cubemap</type>
 				<!-- use this form for a cube cross -->
