@@ -22,7 +22,7 @@
 			<reflection-correction>
 					<use>sim/model/livery/refl_correction</use>
 			</reflection-correction>
-			<reflection-dynamic type="int"> 0 </reflection-dynamic>
+			<reflection-dynamic type="int"> 1 </reflection-dynamic>
 
 			<texture n="5">
 				<type>cubemap</type>
