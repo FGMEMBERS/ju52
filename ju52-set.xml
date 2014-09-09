@@ -1,0 +1,399 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Ju 52 3/m FDM Config, by Detlef Faber
+
+ April 2006 
+
+faber@sol2500.net
+************************************************************************
+-->
+
+<PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
+ <sim>
+
+  <description>Junkers Ju-52-3m</description>
+  <author>Detlef Faber</author>
+  <status>beta</status>
+  <rating>
+    <FDM type="int">3</FDM>
+    <systems type="int">3</systems>
+    <model type="int">4</model>
+    <cockpit type="int">3</cockpit>
+  </rating>
+  <flight-model>yasim</flight-model>
+  <aero>ju52-yasim</aero>
+  <fuel-fraction>1.0</fuel-fraction>
+
+  <sound>
+   <path>Aircraft/ju52/Sounds/ju52-sound.xml</path>
+  </sound>
+
+  <submodels> 
+    <serviceable type="bool">true</serviceable>
+    <path>Aircraft/ju52/Models/submodels.xml</path>
+  </submodels>
+
+	<armament include="Include/armament.xml">
+	</armament>
+
+  <model>
+   <path>Aircraft/ju52/Models/Ju-52.xml</path>
+		<cowling>
+						<left type="int">1</left>
+						<mid type="int">1</mid>
+						<right type="int">1</right>
+		</cowling>
+   <livery>
+     <file type="string">Swiss</file>
+			<texture type="string">ju52-1.png</texture>
+			<texture-cowl type="string">ju52-1.png</texture-cowl>
+			<specmap-file type="string">Aircraft/ju52/Models/Liveries/D-AQUI30-sp.png</specmap-file>
+  </livery>
+	<variant type="int">0.0</variant>
+	<reargun type="int">0</reargun>
+	<wheelcover type="int">1</wheelcover>
+	<enginecover type="int">0</enginecover>
+		<map>
+			<default_exit>
+				<x-offset-m>11</x-offset-m>
+				<y-offset-m>-2.5</y-offset-m>
+			</default_exit>
+		</map>
+   <crew>
+		 <pilot n="0">
+     <pose include = "Include/ju52_pilot.xml"></pose>
+				<gender>0</gender>
+				<character>0</character>
+				<outfit>2</outfit>
+     </pilot>
+		 <pilot n="1">
+     <pose include = "Include/ju52_pilot.xml"></pose>
+				<gender>1</gender>
+				<character>0</character>
+				<outfit>0</outfit>
+     </pilot>
+   </crew>
+  </model> 
+<rendering>
+<refl_correction type="string">-0.1</refl_correction>
+</rendering>
+
+  <virtual-cockpit archive="y">false</virtual-cockpit>
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+  <view>
+   <internal archive="y">true</internal>
+   <config>
+     <!-- x/y/z == right/up/back -->
+     <x-offset-m archive="y">-0.49</x-offset-m>
+     <y-offset-m archive="y">0.9</y-offset-m>
+     <z-offset-m archive="y">3.01</z-offset-m>
+     <pitch-offset-deg>-12</pitch-offset-deg>
+   </config>
+  </view>
+
+  <view n="1"> 
+        <config> 
+          <target-z-offset-m archive="y" type="double">8.75</target-z-offset-m>
+        </config>
+      </view>
+
+  <view n="2"> 
+        <config> 
+          <target-z-offset-m archive="y" type="double">8.75</target-z-offset-m>
+        </config>
+      </view>
+
+  <view n="3"> 
+        <config> 
+          <target-z-offset-m archive="y" type="double">8.75</target-z-offset-m>
+        </config>
+      </view>
+
+  <view n="4"> 
+        <config> 
+          <target-z-offset-m archive="y" type="double">8.75</target-z-offset-m>
+        </config>
+      </view>
+
+  <view n="5"> 
+        <config> 
+          <target-z-offset-m archive="y" type="double">8.75</target-z-offset-m>
+        </config>
+      </view>
+
+  <view n="6"> 
+        <config> 
+          <target-z-offset-m archive="y" type="double">8.75</target-z-offset-m>
+        </config>
+      </view>
+
+  <view n="102">
+   <enabled type="bool">false</enabled>
+   <name>Turret</name>
+    <type>lookat</type>
+    <config>
+      <from-model type="bool">false</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
+      <eye-lon-deg-path>/position/longitude-deg</eye-lon-deg-path>
+      <eye-alt-ft-path>/position/altitude-ft</eye-alt-ft-path>
+      <eye-pitch-deg-path>/orientation/pitch-deg</eye-pitch-deg-path>
+      <eye-roll-deg-path>/orientation/roll-deg</eye-roll-deg-path>
+      <eye-heading-deg-path>/orientation/heading-deg</eye-heading-deg-path>
+
+      <at-model type="bool">true</at-model>
+      <at-model-idx type="int">0</at-model-idx>
+      <target-y-offset-m type="double">1.35</target-y-offset-m>
+      <target-z-offset-m type="double">12.3</target-z-offset-m>
+
+      <ground-level-nearplane-m type="double">0.1</ground-level-nearplane-m>
+      <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+
+     <x-offset-m archive="y" type="double">0.0</x-offset-m>
+     <y-offset-m archive="y" type="double">0.09</y-offset-m>
+     <z-offset-m archive="y" type="double">-0.4</z-offset-m>
+		 <heading-offset-deg>180</heading-offset-deg>
+    </config>
+  </view>
+
+  <chase-distance-m type="double" archive="y">-45.0</chase-distance-m>
+
+  <help>
+   <title>Junkers Ju 52 3/m</title>
+   <key>
+      <name>l</name>
+      <desc>toggle Tailwheel Lock</desc>
+    </key>
+    <key>
+      <name>C</name>
+      <desc>toggle Passenger Door</desc>
+    </key>
+    <key>
+      <name>D</name>
+      <desc>toggle Front Access Door</desc>
+    </key>
+    <key>
+      <name>j</name>
+      <desc>Jump Signal to parachuters</desc>
+      </key>
+    <text>---Take Off---
+Flaps down 20 degrees, Trim slightly nose down. Take off at 1.4 ata (Full Throttle), Keep Tail down until Aircraft flies itself off. Climb at 1.3 ata, Cruise with 1.2 ata.
+---Landing---
+lower Flaps and Gear under 200 km/h. Approach Speed is 150 km/h or less. Speed at Treshold should be 100 - 110 km/h. If too fast the Aircraft is likly to lift off again. In that case try a 2-wheel landing.
+Don't forget to release Tailwheel lock (l) before taxiing off the Runway.</text>
+  </help>
+	<menubar>
+		<default>
+			<menu n="10">
+				<label>Ju-52</label>
+					<enabled type="bool">true</enabled>
+<!--
+					<item>
+						<label>Magically start engine</label>
+						<binding>
+							<command>nasal</command>
+							<script>fw190.magicstart();</script>
+						</binding>
+					</item>
+-->
+					<item>
+						<label>Select Livery</label>
+              <binding>
+                <command>nasal</command>
+                <script>aircraft.livery.dialog.toggle()</script>
+              </binding>
+					</item>
+
+			</menu>
+		</default>
+	</menubar>
+  <weight n="0">
+      <name>Cargo</name>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt>
+					<name>none</name>
+					<lbs>0</lbs>
+			</opt>
+     	<opt>
+					<name>2500 lbs Load</name>
+      		<lbs>2500.0</lbs>
+      </opt>
+      <opt>
+					<name>5000 lbs Load</name>
+      		<lbs>5000.0</lbs>
+      </opt>
+      <opt>
+					<name>7500 lbs Load</name>
+      		<lbs>7500.0</lbs>
+      </opt>
+      <opt>
+					<name>10000 lbs Load</name>
+      		<lbs>10000.0</lbs>
+      </opt>
+  </weight>
+	<multiplay include="Include/multiplay.xml">
+	</multiplay>
+ </sim>
+
+ <controls>
+
+  <jump-signal type="bool">false</jump-signal>
+  <engines>
+   <engine n="0">
+    <throttle-c type="float">0.0</throttle-c>
+		<mixture0>0</mixture0>
+    <magnetos>0</magnetos>
+   </engine>
+   <engine n="1">
+    <throttle-c type="float">0.0</throttle-c>
+		<mixture0>0</mixture0>
+    <magnetos>0</magnetos>
+   </engine>
+    <engine n="2">
+    <throttle-c type="float">0.0</throttle-c>
+		<mixture0>0</mixture0>
+    <magnetos>0</magnetos>
+   </engine>
+  </engines>
+  <gear>
+     <tailwheel-lock>true</tailwheel-lock>
+     <rdoor-pos-norm type="float">0.0</rdoor-pos-norm>
+     <ldoor-pos-norm type="float">0.0</ldoor-pos-norm>
+  </gear>
+ </controls>
+
+ <engines>
+  <engine n="0">
+    <carburator-entry-temp-degc type="double">15</carburator-entry-temp-degc>
+    <oil-pressure-psi type="double">75</oil-pressure-psi>
+    <oil-temp-calc type="double">15</oil-temp-calc>
+    <oil-visc type="double">0.0</oil-visc>
+	  <cylinder-temp-degc type="double">15</cylinder-temp-degc>
+    <rpm type="double">0</rpm>
+		<startup type="bool">false</startup>
+		<startup_smoke type="bool">false</startup_smoke>
+	  <rev-strain type="double">0.0</rev-strain>
+	  <boost-strain type="double">0.0</boost-strain>
+	  <overrev type="bool">false</overrev>
+	  <overboost type="bool">false</overboost>
+  </engine>
+  <engine n="1">
+    <carburator-entry-temp-degc type="double">15</carburator-entry-temp-degc>
+    <oil-pressure-psi type="double">75</oil-pressure-psi>
+    <oil-temp-calc type="double">15</oil-temp-calc>
+    <oil-visc type="double">0.0</oil-visc>
+	  <cylinder-temp-degc type="double">15</cylinder-temp-degc>
+    <rpm type="double">0</rpm>
+		<startup type="bool">false</startup>
+		<startup_smoke type="bool">false</startup_smoke>
+	  <rev-strain type="double">0.0</rev-strain>
+	  <boost-strain type="double">0.0</boost-strain>
+	  <overrev type="bool">false</overrev>
+	  <overboost type="bool">false</overboost>
+  </engine>
+  <engine  n="2">
+    <carburator-entry-temp-degc type="double">15</carburator-entry-temp-degc>
+    <oil-pressure-psi type="double">75</oil-pressure-psi>
+    <oil-temp-calc type="double">15</oil-temp-calc>
+    <oil-visc type="double">0.0</oil-visc>
+	  <cylinder-temp-degc type="double">15</cylinder-temp-degc>
+    <rpm type="double">0</rpm>
+		<startup type="bool">false</startup>
+		<startup_smoke type="bool">false</startup_smoke>
+	  <rev-strain type="double">0.0</rev-strain>
+	  <boost-strain type="double">0.0</boost-strain>
+	  <overrev type="bool">false</overrev>
+	  <overboost type="bool">false</overboost>
+  </engine>
+ </engines>
+  
+ <autopilot>
+   <config>
+     <min-climb-speed-kt type="float">100.0</min-climb-speed-kt>
+     <best-climb-speed-kt type="float">120.0</best-climb-speed-kt>
+     <target-climb-rate-fpm type="float">1000.0</target-climb-rate-fpm>
+     <target-descent-rate-fpm type="float">1000.0</target-descent-rate-fpm>
+     <elevator-adj-factor type="float">6000.0</elevator-adj-factor>
+     <integral-contribution type="float">0.005</integral-contribution>
+     <zero-pitch-throttle type="float">0.45</zero-pitch-throttle>
+     <zero-pitch-trim-full-throttle type="float">0.001</zero-pitch-trim-full-throttle>
+   </config>
+ </autopilot>
+
+ <input>
+   <keyboard>
+ 			<key n="108">
+  				<name>l</name>
+          <desc>Toggle Tailwheel Lock</desc>
+          <binding> 
+            <command>property-toggle</command>
+            <property>controls/gear/tailwheel-lock</property>
+          </binding>
+      </key>
+      <key n="67">
+        <name>C</name>
+        <desc>Toggle Passenger-Door</desc>
+        <binding n="0">
+          <command>nasal</command>
+          <script>ju52.toggle_ldoor()</script>
+        </binding>
+      </key>
+      <key n="68">
+        <name>D</name>
+        <desc>Toggle Front-Door</desc>
+        <binding n="0">
+          <command>nasal</command>
+          <script>ju52.toggle_rdoor()</script>
+        </binding>
+      </key>
+<!--
+  <key n="106">
+    <name>j</name>
+    <desc>jumpers</desc>
+    <binding>
+     <command>property-assign</command>
+     <property>controls/jump-signal</property>
+     <value>true</value>
+    </binding>
+   </key>
+-->
+   </keyboard>
+
+
+ </input>
+
+  <nasal>
+   <ju52>
+     <file>Aircraft/ju52/Nasal/ju52.nas</file>
+   </ju52>
+			<engine0>
+					<file>Aircraft/ju52/Nasal/bmw132.nas</file>
+			</engine0>
+			<engine1>
+					<file>Aircraft/ju52/Nasal/bmw132-1.nas</file>
+			</engine1>
+			<engine2>
+					<file>Aircraft/ju52/Nasal/bmw132-2.nas</file>
+			</engine2>
+		<pilot-movment>
+			<file>Aircraft/Generic/Human/Nasal/pilot-movment.nas</file>
+    <script>
+				var head_x = "sim/model/crew/pilot[0]/pose/position/limb[2]/x-deg";
+				var head_y = "sim/model/crew/pilot[0]/pose/position/limb[2]/y-deg";
+				var head_z = "sim/model/crew/pilot[0]/pose/position/limb[2]/z-deg";
+    </script>
+		</pilot-movment>
+
+		<copilot-movment>
+			<file>Aircraft/Generic/Human/Nasal/pilot-movment.nas</file>
+    <script>
+				var head_x = "sim/model/crew/pilot[1]/pose/position/limb[2]/x-deg";
+				var head_y = "sim/model/crew/pilot[1]/pose/position/limb[2]/y-deg";
+				var head_z = "sim/model/crew/pilot[1]/pose/position/limb[2]/z-deg";
+    </script>
+		</copilot-movment>
+  </nasal>
+</PropertyList>

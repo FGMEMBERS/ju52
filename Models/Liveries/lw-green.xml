@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Luftwaffe </name>
+
+            <texture>Liveries/ju52-1a.png</texture>
+            <texture-cowl>Liveries/ju52-1a.png</texture-cowl>
+						<texture-floats>Liveries/floats_a.png</texture-floats>
+						<amb_correction type="float">0.0</amb_correction>
+						<refl_correction type="float">-0.25</refl_correction>
+        </livery>
+				<variant type="int">5</variant>
+				<reargun>1</reargun>
+				<enginecover>1</enginecover>
+				<cowling>
+						<left>1</left>
+						<mid>1</mid>
+						<right>1</right>
+				</cowling>
+				<wheelcover>0</wheelcover>
+    </model>
+		<view n="102">
+				<enabled type="bool">1</enabled>
+		</view>
+</sim>
+</PropertyList>

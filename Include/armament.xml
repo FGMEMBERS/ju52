@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<gun n="0">
+		<name>mg15-top</name>
+		<serviceable type="bool">true</serviceable>
+		<fire type="bool">false</fire>
+		<heading-deg type="float">0.0</heading-deg>
+		<elevation-deg type="float">0.0</elevation-deg>
+	</gun>
+	
+ 
+</PropertyList>

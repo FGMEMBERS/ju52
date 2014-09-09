@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Lufthansa (30's)</name>
+
+            <texture>Liveries/D-AQUI30.png</texture>
+            <texture-cowl>Liveries/D-AQUI.png</texture-cowl>
+						<texture-floats>floats.png</texture-floats>
+						<amb_correction type="float">0.0</amb_correction>
+						<refl_correction type="float">0.2</refl_correction>
+        </livery>
+				<reargun>0</reargun>
+				<enginecover>0</enginecover>
+				<cowling>
+						<left>1</left>
+						<mid>1</mid>
+						<right>1</right>
+				</cowling>
+				<wheelcover>1</wheelcover>
+    </model>
+		<view n="102">
+				<enabled type="bool">0</enabled>
+		</view>
+</sim>
+</PropertyList>
