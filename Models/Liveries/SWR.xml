@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Swissair</name>
+            <texture>Liveries/SWR.png</texture>
+            <texture-cowl>Liveries/SWR.png</texture-cowl>
+			<texture-floats>floats.png</texture-floats>
+        </livery>
+    </model>
+    <rendering>
+		<refl_correction type="string">0.05</refl_correction>
+    </rendering>
+</sim>
+</PropertyList>
