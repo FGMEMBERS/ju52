@@ -41,3 +41,7 @@ var update_mp_props = func {
 setlistener("/sim/signals/fdm-initialized",update_mp_props);
 
 aircraft.livery.init("Aircraft/ju52/Models/Liveries");
+
+var leftdoor = aircraft.door.new ("/controls/doors/doorL/",1.5);
+
+var rightdoor = aircraft.door.new ("/controls/doors/doorR/",1.5);

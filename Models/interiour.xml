@@ -407,7 +407,7 @@ Variant		Description
   <type>rotate</type>
   <object-name>leftdoor.I</object-name>
   <object-name>leftdoor2.I</object-name>
-  <property>controls/gear/ldoor-pos-norm</property>
+  <property>controls/doors/doorL/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -434,7 +434,7 @@ Variant		Description
   <type>rotate</type>
   <object-name>rightdoor.I</object-name>
   <object-name>rightdoor2.I</object-name>
-  <property>controls/gear/rdoor-pos-norm</property>
+  <property>controls/doors/doorR/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
