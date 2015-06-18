@@ -36,13 +36,15 @@ var init = func {
   settimer(main_loop, looptime);
 }
 var main_loop = func {
+			updateHobbs();
 #	print ("engstat: ", engstat.getValue());
 	if (engstat.getValue() == 1){
 		engine_update();
 		fluid_update();
 		check_engine();
-	}
-	check_startup();
+	} else {
+	  check_startup();
+        }
   settimer(main_loop, looptime);
 }
 
@@ -118,7 +120,7 @@ var check_engine = func {
 	}
 	if (rs > 300000 ) {
 		setprop("/engines/engine["~ en ~"]/overrev", 1);
-		kill_engine();
+		failure.kill_engine();
 	}	
 	#check for overboost
 	if (mp > 55) {
@@ -222,5 +224,21 @@ var starter = func {
 			setprop("/controls/engines/engine["~ en ~"]/starter",0);}	
 	}
 
+# Hobbs Counter
+var updateHobbs = func{
+	var running = engine_running_Node.getValue();
+
+	if(running){
+		hobbs_engine.start();
+	} else {
+		hobbs_engine.stop();
+	}
+
+}
+
+var hobbs_engine = aircraft.timer.new("sim/time/hobbs/engine["~ en ~"]", 60, 0);
+var engine_running_Node = props.globals.initNode("engines/engine["~ en ~"]/running", 1, "BOOL");
+
+hobbs_engine.reset();
 
 setlistener("/sim/signals/fdm-initialized",init);

@@ -89,7 +89,7 @@
  <path>ju52.ac</path>
 <!-- Effects-->
 <effect>
-	<inherits-from>Effects/ju52_effect</inherits-from> <!--FGFS 2.0 -->
+	<inherits-from>Effects/ju52_effect</inherits-from>
 	<object-name>fuselage</object-name>
 	<object-name>roofhatch</object-name>
 	<object-name>cowling.L</object-name>
@@ -137,6 +137,35 @@
 		<name>interiour</name>
 		<path>Aircraft/ju52/Models/interiour.xml</path>
 	</model>
+
+	<model>
+		<name>interiour</name>
+		<path>Aircraft/ju52/Models/skis.xml</path>
+	</model>
+ <animation>
+  <type>select</type>
+  <object-name>wheel.L</object-name>
+  <object-name>wheel.R</object-name>
+  <object-name>tailwheel</object-name>
+  <condition>
+   <not-equals>
+    <property>sim/model/skis</property>
+    <value>1</value>
+   </not-equals>
+  </condition>
+ </animation>
+ <animation>
+  <type>select</type>
+  <object-name>ski.L</object-name>
+  <object-name>ski.R</object-name>
+  <object-name>ski.B</object-name>
+  <condition>
+   <equals>
+    <property>sim/model/skis</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
 
     <model> 
       <path>Aircraft/Generic/Human/Models/pilot.xml</path>
@@ -395,7 +424,7 @@
 <animation>
   <type>rotate</type>
   <object-name>aileron.R</object-name>
-  <property>controls/flight/aileron</property>
+  <property>surface-positions/aileron-pos-norm</property>
   <factor>30.0</factor>
   <center>
    <x-m>7.064</x-m>
@@ -415,7 +444,7 @@
  <animation>
   <type>rotate</type>
   <object-name>aileron.L</object-name>
-  <property>controls/flight/aileron</property>
+  <property>surface-positions/aileron-pos-norm</property>
   <factor>30.0</factor>
   <center>
    <x-m>7.064</x-m>
@@ -631,7 +660,7 @@
   <type>rotate</type>
   <object-name>leftdoor</object-name>
   <object-name>leftdoorglass</object-name>
-  <property>controls/gear/ldoor-pos-norm</property>
+  <property>controls/doors/doorL/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -654,11 +683,27 @@
    </axis>
  </animation>
 
+<animation>
+    <type>pick</type>
+    <object-name>leftdoor</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+
+      <binding>
+        <command>nasal</command>
+
+<script>ju52.leftdoor.toggle();</script>                                                                                                                                                            
+      </binding>
+    </action>
+ </animation>    
+
  <animation>
   <type>rotate</type>
   <object-name>rightdoor</object-name>
   <object-name>rightdoorglass</object-name>
-  <property>controls/gear/rdoor-pos-norm</property>
+  <property>controls/doors/doorR/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -680,6 +725,22 @@
    <z>1.000000</z>
    </axis>
  </animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>rightdoor</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+
+      <binding>
+        <command>nasal</command>
+
+<script>ju52.rightdoor.toggle();</script>                                                                                                                                                            
+      </binding>
+    </action>
+ </animation>  
 
  <animation>
   <type>rotate</type>
@@ -725,6 +786,23 @@
         <z2-m>1.28461</z2-m>
    </axis>
  </animation>
+
+
+<animation>
+    <type>pick</type>
+    <object-name>pick.rear</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+
+      <binding>
+        <command>nasal</command>
+
+<script>walk.get_in(9.5,-0.4, -0.73);</script>                                                                                                                                                            
+      </binding>
+    </action>
+ </animation>    
 
   <animation>
     <type>material</type>

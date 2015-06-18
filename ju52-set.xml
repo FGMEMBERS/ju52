@@ -9,7 +9,7 @@ faber@sol2500.net
 ************************************************************************
 -->
 
-<PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
+<PropertyList>
  <sim>
 
   <description>Junkers Ju-52-3m</description>
@@ -66,15 +66,56 @@ faber@sol2500.net
 				<gender>0</gender>
 				<character>0</character>
 				<outfit>2</outfit>
+				<headgear>1</headgear>
+				<hair>1</hair>
      </pilot>
 		 <pilot n="1">
      <pose include = "Include/ju52_pilot.xml"></pose>
 				<gender>1</gender>
 				<character>0</character>
 				<outfit>0</outfit>
+				<headgear>1</headgear>
+				<eyewear>1</eyewear>
+				<hair>1</hair>
      </pilot>
    </crew>
   </model> 
+
+	<failure>
+		<emptyweight type ="float">12158</emptyweight>
+		<max-permiss-rpm type="float">2500</max-permiss-rpm>
+		<max-permiss-boost type="float">35</max-permiss-boost>
+		<bendload type="float">4</bendload>
+		<breakload type="float">5.5</breakload>
+		<breakspeed type="float">295</breakspeed>
+		<flapoverspeed type="float">110</flapoverspeed>
+		<controls>
+				<flight>
+						<aileron>
+							<fail-norm>0</fail-norm>
+						</aileron>
+				</flight>
+				<left-wing-failure type ="float">0</left-wing-failure>
+				<right-wing-failure type ="float">0</right-wing-failure>
+		</controls>
+		<engines>
+				<engine n="0">
+						<boost-strain type="float">0</boost-strain>
+						<rev-strain type="float">0</rev-strain>
+						<overboost type="bool">false</overboost>
+						<overrev type="bool">false</overrev>
+				</engine>
+		</engines>
+		<gear>
+				<gear n="0">
+				
+				</gear>
+		</gear>
+		<structural>
+				<left-wing-torn type="bool">false</left-wing-torn>
+				<right-wing-torn type="bool">false</right-wing-torn>
+		</structural>
+	</failure>
 <rendering>
 <refl_correction type="string">-0.1</refl_correction>
 </rendering>
@@ -260,8 +301,7 @@ Don't forget to release Tailwheel lock (l) before taxiing off the Runway.</text>
   </engines>
   <gear>
      <tailwheel-lock>true</tailwheel-lock>
-     <rdoor-pos-norm type="float">0.0</rdoor-pos-norm>
-     <ldoor-pos-norm type="float">0.0</ldoor-pos-norm>
+			<brake-parking type="bool">true</brake-parking>
   </gear>
  </controls>
 
@@ -369,6 +409,9 @@ Don't forget to release Tailwheel lock (l) before taxiing off the Runway.</text>
    <ju52>
      <file>Aircraft/ju52/Nasal/ju52.nas</file>
    </ju52>
+	 <failure>
+				<file>Aircraft/ju52/Nasal/failure.nas</file>
+	 </failure>
 			<engine0>
 					<file>Aircraft/ju52/Nasal/bmw132.nas</file>
 			</engine0>
